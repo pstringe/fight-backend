@@ -5,4 +5,4 @@ const opponentSchema = mongoose.Schema({
     imgUrl: String
 })
 
-export default mongoose.model('opponents', opponentSchema);
+export default mongoose.model('Opponents', opponentSchema);

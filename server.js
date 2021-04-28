@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import {password} from './credentials.js';
+import Opponents from './dbOpponents.js';
 
 /*
 **  App Config
@@ -27,7 +28,30 @@ mongoose.connect(connection_url, {
 */
 app.get('/', (req, res) => {
     return res.status(200).send('TEST');
-})
+});
+
+app.post('/fight/opponent', (req, res) => {
+    const dbOpponent = req.body;
+    Opponents.create(dbOpponent, (err, data) => {
+        if (err){
+            res.status(500).send(err);
+        }
+        else{
+            res.status(201).send(data);
+        }
+    });
+});
+
+app.get('/fight/opponents', (req, res) => {
+    Opponents.find((err, data) => {
+        if (err){
+            res.status(500).send(err);
+        }
+        else{
+            res.status(200).send(data);
+        }
+    })
+});
 
 /*
 **  Listener
