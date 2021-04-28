@@ -1,0 +1,25 @@
+{
+  "name": "fight-backend",
+  "version": "1.0.0",
+  "description": "backend on tinder-style application for finding sparring partners",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pstringe/fight-backend-.git"
+  },
+  "author": "poitier stringer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pstringe/fight-backend-/issues"
+  },
+  "homepage": "https://github.com/pstringe/fight-backend-#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.6"
+  }
+}
