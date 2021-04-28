@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import {password} from './credentials.js';
 import Opponents from './dbOpponents.js';
+import Cors from 'cors';
 
 /*
 **  App Config
@@ -13,7 +14,8 @@ const connection_url = `mongodb+srv://admin:${password}@cluster0.67drb.mongodb.n
 /*
 **  Middlewares
 */
-
+app.use(express.json());
+app.use(Cors())
 /*
 **  DB config
 */
